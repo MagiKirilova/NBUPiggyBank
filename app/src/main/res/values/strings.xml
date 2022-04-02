@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">NBUPiggyBank</string>
+    <string name="title_activity_user">User</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="nbu_project">NBU Project</string>
+    <string name="piggybank">PiggyBank</string>
+    <string name="name">Име</string>
+    <string name="Име">Име</string>
+    <string name="ЕГН">ЕГН</string>
+    <string name="Имейл">Имейл</string>
+    <string name="Парола">Парола</string>
+    <string name="Регистрация">Регистрация</string>
+</resources>

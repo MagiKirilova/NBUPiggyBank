@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "262919773100",
+    "firebase_url": "https://nbu-piggy-bank-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "nbu-piggy-bank",
+    "storage_bucket": "nbu-piggy-bank.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:262919773100:android:7a96f18ebe43ccfab93809",
+        "android_client_info": {
+          "package_name": "com.example.nbupiggybank"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "262919773100-a162a6n7q4o61ntks1mde9m56am5k71e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJte-Irr1rep49FTp8-Oi6A3ExQD3aREI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "262919773100-a162a6n7q4o61ntks1mde9m56am5k71e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
