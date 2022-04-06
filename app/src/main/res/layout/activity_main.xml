@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/ScrollView01"
     android:layout_width="fill_parent"
@@ -7,7 +8,6 @@
 
     <RelativeLayout android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:paddingTop="60dp"
         android:padding="20dp"
         tools:context=".MainActivity">
@@ -36,25 +36,17 @@
             android:layout_centerHorizontal="true"
             />
 
-        <ImageView
-            android:id="@+id/piggy1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/piggy1"
-            android:layout_below="@id/bannerDescription"
-            android:layout_centerHorizontal="true" />
-
         <EditText
             android:id="@+id/email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="24sp"
-            android:ems="10"
-            android:hint="Имейл"
-            android:inputType="textEmailAddress"
-            android:layout_below="@id/piggy1"
+            android:layout_below="@id/bannerDescription"
             android:layout_centerHorizontal="true"
-            />
+            android:ems="10"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:textColorHint="#78909C"
+            android:textSize="24sp" />
 
         <EditText
             android:id="@+id/password"
@@ -62,7 +54,7 @@
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:ems="10"
-            android:hint="Парола"
+            android:hint="@string/password"
             android:inputType="textPassword"
             android:layout_below="@id/email"
             android:layout_centerHorizontal="true"
@@ -73,7 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#ffa6c1"
-            android:text="Вход"
+            android:text="@string/buttonlogin"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -86,7 +78,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/Login"
-            android:text="Забравена парола?"
+            android:text="@string/forgotpass"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_centerHorizontal="true"
@@ -97,7 +89,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/ForgotPass"
-            android:text="Регистрация"
+            android:text="@string/registerlink"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_centerHorizontal="true"

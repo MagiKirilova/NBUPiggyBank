@@ -14,7 +14,19 @@
     <string name="name">Име</string>
     <string name="Име">Име</string>
     <string name="ЕГН">ЕГН</string>
-    <string name="Имейл">Имейл</string>
-    <string name="Парола">Парола</string>
+    <string name="Имейл">Имейл…</string>
+    <string name="Парола">Парола…</string>
+    <string name="emailLabel">Имейл</string>
+    <string name="passLabel">Парола</string>
     <string name="Регистрация">Регистрация</string>
+    <string name="password">Парола…</string>
+    <string name="buttonlogin">Вход</string>
+    <string name="forgotpass">Забравена парола?</string>
+    <string name="registerlink">Регистрация</string>
+    <string name="email">Имейл…</string>
+    <string name="LoginBanner">Вход</string>
+    <string name="halfscreen">HalfScreen</string>
+    <string name="loginDesc">Моля, влезте в системата</string>
+    <string name="loginicon">LoginIcon</string>
+    <string name="piggyicon">piggyicon</string>
 </resources>
