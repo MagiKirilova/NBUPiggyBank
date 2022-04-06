@@ -8,93 +8,151 @@
 
     <RelativeLayout android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="40dp"
+        android:padding="30dp"
         tools:context=".Register">
 
-        <TextView
-            android:id="@+id/banner"
+        <ImageView
+            android:id="@+id/arrowback"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/piggybank"
-            android:textSize="70sp"
-            android:textAlignment="center"
-            android:textStyle="bold"
-            android:fontFamily="sans-serif-black"
+            android:contentDescription="@string/arrowbacklogin"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/leftarrow">
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/piggyRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/piggyregister"
             android:layout_centerHorizontal="true"
-             />
+            android:src="@drawable/piggyregister1"
+            android:layout_marginBottom="60dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/arrowback">
+        </ImageView>
 
         <TextView
-            android:id="@+id/bannerDescription"
+            android:id="@+id/nameLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/nbu_project"
+            android:layout_above="@id/Name"
+            android:fontFamily="sans-serif-black"
+            android:paddingLeft="5dp"
+            android:text="@string/Име"
             android:textAlignment="center"
-            android:textSize="20sp"
-            android:textStyle="italic"
-            android:layout_below="@id/banner"
-            android:layout_centerHorizontal="true"
-            />
+            android:textColor="@color/black_02"
+            android:textSize="22sp" />
 
         <EditText
             android:id="@+id/Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/piggyRegister"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:minHeight="52dp"
+            android:textColorHint="@color/black_02"
+            android:textSize="20sp"
+            android:paddingLeft="10dp"
+            />
+
+        <TextView
+            android:id="@+id/EgnLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="28sp"
-            android:ems="10"
-            android:hint="@string/Име"
-            android:inputType="text"
-            android:layout_below="@id/bannerDescription"
-            android:layout_centerHorizontal="true"
-            />
+            android:layout_below="@id/Name"
+            android:fontFamily="sans-serif-black"
+            android:paddingLeft="5dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/ЕГН"
+            android:textAlignment="center"
+            android:textColor="@color/black_02"
+            android:textSize="22sp"  />
 
         <EditText
             android:id="@+id/Egn"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="28sp"
-            android:ems="10"
-            android:hint="@string/ЕГН"
-            android:inputType="text"
             android:layout_below="@id/Name"
             android:layout_centerHorizontal="true"
-            />
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:minHeight="52dp"
+            android:layout_marginTop="50dp"
+            android:textColorHint="@color/black_02"
+            android:textSize="20sp"
+            android:paddingLeft="10dp" />
+
+        <TextView
+            android:id="@+id/EmailLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Egn"
+            android:fontFamily="sans-serif-black"
+            android:paddingLeft="5dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/emailLabel"
+            android:textAlignment="center"
+            android:textColor="@color/black_02"
+            android:textSize="22sp"  />
 
         <EditText
             android:id="@+id/Email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Egn"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:minHeight="52dp"
+            android:layout_marginTop="50dp"
+            android:textColorHint="@color/black_02"
+            android:textSize="20sp"
+            android:paddingLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/PassLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="28sp"
-            android:ems="10"
-            android:hint="@string/Имейл"
-            android:inputType="text"
-            tools:ignore="TextFields"
-            android:layout_below="@id/Egn"
-            android:layout_centerHorizontal="true"/>
+            android:layout_below="@id/Email"
+            android:fontFamily="sans-serif-black"
+            android:paddingLeft="5dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/passLabel"
+            android:textAlignment="center"
+            android:textColor="@color/black_02"
+            android:textSize="22sp"  />
 
         <EditText
             android:id="@+id/Password"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="28sp"
-            android:ems="10"
-            android:hint="@string/Парола"
-            android:inputType="textPassword"
             android:layout_below="@id/Email"
             android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:minHeight="52dp"
+            android:layout_marginTop="50dp"
+            android:textColorHint="@color/black_02"
+            android:textSize="20sp"
+            android:paddingLeft="10dp"
             />
 
         <Button
             android:id="@+id/registerUser"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="28sp"
-            android:backgroundTint="#ffa6c1"
+            android:layout_below="@id/Password"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/rounded_button"
             android:text="@string/Регистрация"
             android:textColor="@color/white"
-            android:textStyle="bold"
-            tools:targetApi="lollipop"
-            android:layout_below="@id/Password"
-            android:layout_centerHorizontal="true"/>
+            android:textSize="20sp"
+            android:minHeight="52dp"
+            android:layout_marginTop="40dp"
+            tools:ignore="DuplicateSpeakableTextCheck"/>
 
     </RelativeLayout>
 </ScrollView>

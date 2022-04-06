@@ -29,4 +29,6 @@
     <string name="loginDesc">Моля, влезте в системата</string>
     <string name="loginicon">LoginIcon</string>
     <string name="piggyicon">piggyicon</string>
+    <string name="piggyregister">piggyRegister</string>
+    <string name="arrowbacklogin">arrowbacklogin</string>
 </resources>

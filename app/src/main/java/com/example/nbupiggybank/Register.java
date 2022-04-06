@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,9 +23,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Register extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView banner,registerUser;
     private EditText editTextName, editTextEGN, editTextEmail, editTextPassword;
-    private ProgressBar progressBar;
 
     private FirebaseAuth mAuth;
     FirebaseFirestore database = FirebaseFirestore.getInstance();
@@ -37,10 +36,10 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
 
         mAuth = FirebaseAuth.getInstance();
 
-        banner = findViewById(R.id.banner);
-        banner.setOnClickListener(this);
+        ImageView arrowback = findViewById(R.id.arrowback);
+        arrowback.setOnClickListener(this);
 
-        registerUser = findViewById(R.id.registerUser);
+        TextView registerUser = findViewById(R.id.registerUser);
         registerUser.setOnClickListener(this);
 
         editTextName =  findViewById(R.id.Name);
@@ -55,7 +54,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     public void onClick(View v) {
 
         switch (v.getId()){
-            case R.id.banner:
+            case R.id.arrowback:
                 startActivity(new Intent(this,MainActivity.class));
                 break;
             case R.id.registerUser:
