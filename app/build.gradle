@@ -9,7 +9,7 @@ android {
     defaultConfig {
         applicationId "com.example.nbupiggybank"
         minSdk 19
-        targetSdk 19
+        targetSdk 21
         versionCode 1
         versionName "1.0"
 
