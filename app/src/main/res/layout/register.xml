@@ -6,31 +6,21 @@
     android:layout_height="fill_parent"
     android:background="@color/white">
 
-    <RelativeLayout android:layout_width="match_parent"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="30dp"
+        android:padding="@dimen/register_relative_lay_padding"
         tools:context=".Register">
-
-        <ImageView
-            android:id="@+id/arrowback"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/arrowbacklogin"
-            android:layout_alignParentTop="true"
-            android:src="@drawable/leftarrow">
-        </ImageView>
 
         <ImageView
             android:id="@+id/piggyRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/piggyregister"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/piggyregister1"
-            android:layout_marginBottom="60dp"
-            android:layout_marginTop="20dp"
-            android:layout_below="@id/arrowback">
-        </ImageView>
+            android:layout_marginTop="@dimen/padding_five"
+            android:layout_marginBottom="@dimen/register_icon_margin_bottom"
+            android:contentDescription="@string/piggyregister"
+            android:src="@drawable/piggyregister1" />
 
         <TextView
             android:id="@+id/nameLabel"
@@ -38,11 +28,12 @@
             android:layout_height="wrap_content"
             android:layout_above="@id/Name"
             android:fontFamily="sans-serif-black"
-            android:paddingLeft="5dp"
+            android:paddingStart="@dimen/padding_five"
             android:text="@string/Име"
             android:textAlignment="center"
             android:textColor="@color/black_02"
-            android:textSize="22sp" />
+            android:textSize="@dimen/label_text_size"
+            tools:ignore="RtlSymmetry" />
 
         <EditText
             android:id="@+id/Name"
@@ -52,24 +43,26 @@
             android:layout_centerHorizontal="true"
             android:ems="10"
             android:inputType="textEmailAddress"
-            android:minHeight="52dp"
+            android:minHeight="@dimen/edit_text_min_height"
+            android:paddingStart="@dimen/padding_five"
             android:textColorHint="@color/black_02"
-            android:textSize="20sp"
-            android:paddingLeft="10dp"
-            />
+            android:textSize="@dimen/edit_text_size"
+            tools:ignore="LabelFor,RtlSymmetry"
+            android:importantForAutofill="no" />
 
         <TextView
             android:id="@+id/EgnLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/Name"
+            android:layout_marginTop="@dimen/label_margin"
             android:fontFamily="sans-serif-black"
-            android:paddingLeft="5dp"
-            android:layout_marginTop="24dp"
+            android:paddingStart="@dimen/padding_five"
             android:text="@string/ЕГН"
             android:textAlignment="center"
             android:textColor="@color/black_02"
-            android:textSize="22sp"  />
+            android:textSize="@dimen/label_text_size"
+            tools:ignore="RtlSymmetry" />
 
         <EditText
             android:id="@+id/Egn"
@@ -77,26 +70,29 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/Name"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/register_margin_top"
             android:ems="10"
             android:inputType="textEmailAddress"
-            android:minHeight="52dp"
-            android:layout_marginTop="50dp"
+            android:minHeight="@dimen/edit_text_min_height"
+            android:paddingStart="@dimen/padding_five"
             android:textColorHint="@color/black_02"
-            android:textSize="20sp"
-            android:paddingLeft="10dp" />
+            android:textSize="@dimen/edit_text_size"
+            tools:ignore="LabelFor,RtlSymmetry"
+            android:importantForAutofill="no"/>
 
         <TextView
             android:id="@+id/EmailLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/Egn"
+            android:layout_marginTop="@dimen/label_margin"
             android:fontFamily="sans-serif-black"
-            android:paddingLeft="5dp"
-            android:layout_marginTop="24dp"
+            android:paddingStart="@dimen/padding_five"
             android:text="@string/emailLabel"
             android:textAlignment="center"
             android:textColor="@color/black_02"
-            android:textSize="22sp"  />
+            android:textSize="@dimen/label_text_size"
+            tools:ignore="RtlSymmetry" />
 
         <EditText
             android:id="@+id/Email"
@@ -104,26 +100,29 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/Egn"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/register_margin_top"
             android:ems="10"
             android:inputType="textEmailAddress"
-            android:minHeight="52dp"
-            android:layout_marginTop="50dp"
+            android:minHeight="@dimen/edit_text_min_height"
+            android:paddingStart="@dimen/padding_five"
             android:textColorHint="@color/black_02"
-            android:textSize="20sp"
-            android:paddingLeft="10dp"/>
+            android:textSize="@dimen/edit_text_size"
+            tools:ignore="LabelFor,RtlSymmetry"
+            android:importantForAutofill="no" />
 
         <TextView
             android:id="@+id/PassLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/Email"
+            android:layout_marginTop="@dimen/label_margin"
             android:fontFamily="sans-serif-black"
-            android:paddingLeft="5dp"
-            android:layout_marginTop="24dp"
+            android:paddingStart="@dimen/padding_five"
             android:text="@string/passLabel"
             android:textAlignment="center"
             android:textColor="@color/black_02"
-            android:textSize="22sp"  />
+            android:textSize="@dimen/label_text_size"
+            tools:ignore="RtlSymmetry" />
 
         <EditText
             android:id="@+id/Password"
@@ -131,14 +130,15 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/Email"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/register_margin_top"
             android:ems="10"
             android:inputType="textEmailAddress"
-            android:minHeight="52dp"
-            android:layout_marginTop="50dp"
+            android:minHeight="@dimen/edit_text_min_height"
+            android:paddingStart="@dimen/padding_five"
             android:textColorHint="@color/black_02"
-            android:textSize="20sp"
-            android:paddingLeft="10dp"
-            />
+            android:textSize="@dimen/edit_text_size"
+            tools:ignore="LabelFor,RtlSymmetry,TextFields"
+            android:importantForAutofill="no"/>
 
         <Button
             android:id="@+id/registerUser"
@@ -146,13 +146,13 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/Password"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/register_button_margin_top"
             android:background="@drawable/rounded_button"
-            android:text="@string/Регистрация"
+            android:minHeight="@dimen/edit_text_min_height"
+            android:text="@string/createprofile"
             android:textColor="@color/white"
-            android:textSize="20sp"
-            android:minHeight="52dp"
-            android:layout_marginTop="40dp"
-            tools:ignore="DuplicateSpeakableTextCheck"/>
+            android:textSize="@dimen/edit_text_size"
+            tools:ignore="DuplicateSpeakableTextCheck" />
 
     </RelativeLayout>
 </ScrollView>

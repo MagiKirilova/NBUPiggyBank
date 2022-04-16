@@ -1,99 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/ScrollView01"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:background="@color/white">
 
-    <RelativeLayout android:layout_width="match_parent"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="60dp"
-        android:padding="20dp"
+        android:padding="@dimen/login_relative_lay_padding"
         tools:context=".MainActivity">
 
         <TextView
             android:id="@+id/banner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/piggybank"
-            android:textSize="70sp"
-            android:textAlignment="center"
-            android:textStyle="bold"
-            android:fontFamily="sans-serif-black"
-            android:layout_centerHorizontal="true"
-        />
-
-        <TextView
-            android:id="@+id/bannerDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/nbu_project"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/LoginBanner"
             android:textAlignment="center"
-            android:textSize="18sp"
-            android:textStyle="italic"
+            android:textColor="@color/black_02"
+            android:textSize="@dimen/login_banner_text_size"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/piggyIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/banner"
             android:layout_centerHorizontal="true"
-            />
+            android:layout_marginTop="@dimen/login_margin_top"
+            android:layout_marginBottom="@dimen/login_piggy_icon_1_margin_bottom"
+            android:contentDescription="@string/piggyicon"
+            android:src="@drawable/piggycircle4">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/emailLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/email"
+            android:fontFamily="sans-serif-black"
+            android:paddingStart="@dimen/padding_five"
+            android:text="@string/emailLabel"
+            android:textAlignment="center"
+            android:textColor="@color/black_02"
+            android:textSize="@dimen/label_text_size"
+            tools:ignore="RtlSymmetry" />
 
         <EditText
             android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/piggyIcon"
+            android:layout_centerHorizontal="true"
+            android:autofillHints=""
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:minHeight="@dimen/edit_text_min_height"
+            android:paddingStart="@dimen/padding_ten"
+            android:textColorHint="@color/black_02"
+            android:textSize="@dimen/edit_text_size"
+            tools:ignore="LabelFor,RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/passLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/bannerDescription"
-            android:layout_centerHorizontal="true"
-            android:ems="10"
-            android:hint="@string/email"
-            android:inputType="textEmailAddress"
-            android:textColorHint="#78909C"
-            android:textSize="24sp" />
+            android:layout_below="@id/email"
+            android:layout_marginTop="@dimen/label_margin"
+            android:fontFamily="sans-serif-black"
+            android:paddingStart="@dimen/padding_five"
+            android:text="@string/passLabel"
+            android:textAlignment="center"
+            android:textColor="@color/black_02"
+            android:textSize="@dimen/label_text_size"
+            tools:ignore="RtlSymmetry" />
 
         <EditText
             android:id="@+id/password"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="24sp"
-            android:ems="10"
-            android:hint="@string/password"
-            android:inputType="textPassword"
             android:layout_below="@id/email"
             android:layout_centerHorizontal="true"
-            />
+            android:layout_marginTop="@dimen/login_second_label_padding"
+            android:autofillHints=""
+            android:ems="10"
+            android:inputType="textPassword"
+            android:minHeight="@dimen/edit_text_min_height"
+            android:paddingStart="@dimen/padding_ten"
+            android:textColorHint="@color/black_02"
+            android:textSize="@dimen/edit_text_size"
+            tools:ignore="LabelFor,RtlSymmetry" />
 
         <Button
             android:id="@+id/Login"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#ffa6c1"
-            android:text="@string/buttonlogin"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
             android:layout_below="@id/password"
             android:layout_centerHorizontal="true"
-            />
+            android:layout_marginTop="@dimen/login_button_margin_top"
+            android:background="@drawable/rounded_button"
+            android:minHeight="@dimen/edit_text_min_height"
+            android:text="@string/buttonlogin"
+            android:textColor="@color/white"
+            android:textSize="@dimen/edit_text_size"
+            tools:ignore="DuplicateSpeakableTextCheck" />
 
         <TextView
             android:id="@+id/ForgotPass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/Login"
-            android:text="@string/forgotpass"
-            android:textSize="20sp"
-            android:textStyle="bold"
             android:layout_centerHorizontal="true"
-            />
+            android:layout_marginTop="@dimen/login_margin_top"
+            android:text="@string/forgotpass"
+            android:textColor="@color/black_02"
+            android:textSize="@dimen/edit_text_size" />
 
         <TextView
             android:id="@+id/Register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/ForgotPass"
-            android:text="@string/registerlink"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            />
+            android:text="@string/registerlink"
+            android:textColor="@color/black_02"
+            android:textSize="@dimen/edit_text_size" />
+
 
     </RelativeLayout>
 </ScrollView>

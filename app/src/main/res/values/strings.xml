@@ -31,4 +31,7 @@
     <string name="piggyicon">piggyicon</string>
     <string name="piggyregister">piggyRegister</string>
     <string name="arrowbacklogin">arrowbacklogin</string>
+    <string name="createprofile">Създай профил</string>
+    <string name="nalichnarazpolagaemost">Налична разполагаемост</string>
+    <string name="recentTransactions">Последни транзакции</string>
 </resources>

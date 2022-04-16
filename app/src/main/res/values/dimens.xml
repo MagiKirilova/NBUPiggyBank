@@ -1,3 +1,28 @@
 <resources>
-    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="login_relative_lay_padding">30dp</dimen>
+    <dimen name="login_margin_top">20dp</dimen>
+    <dimen name="login_piggy_icon_1_margin_bottom">50dp</dimen>
+    <dimen name="login_banner_text_size">60sp</dimen>
+    <dimen name="padding_five">5dp</dimen>
+    <dimen name="padding_ten">10dp</dimen>
+    <dimen name="label_margin">24dp</dimen>
+    <dimen name="edit_text_min_height">52dp</dimen>
+    <dimen name="label_text_size">22sp</dimen>
+    <dimen name="edit_text_size">20sp</dimen>
+    <dimen name="login_second_label_padding">50sp</dimen>
+    <dimen name="login_button_margin_top">40sp</dimen>
+    <dimen name="register_relative_lay_padding">30dp</dimen>
+    <dimen name="register_icon_margin_bottom">60dp</dimen>
+    <dimen name="register_margin_top">50dp</dimen>
+    <dimen name="register_button_margin_top">40dp</dimen>
+    <dimen name="land_login_button_size">60dp</dimen>
+    <dimen name="land_login_piggy_margin_top">20dp</dimen>
+    <dimen name="land_login_piggy_margin_bottom">50dp</dimen>
+    <dimen name="land_register_edit_text_min_height">52dp</dimen>
+    <dimen name="land_register_view_w">35dp</dimen>
+    <dimen name="land_register_piggy_margin_top">35dp</dimen>
+    <dimen name="land_register_piggy_margin_bottom">50dp</dimen>
 </resources>
+
+
+
