@@ -34,4 +34,11 @@
     <string name="createprofile">Създай профил</string>
     <string name="nalichnarazpolagaemost">Налична разполагаемост</string>
     <string name="recentTransactions">Последни транзакции</string>
+    <string name="phonelabel">Мобилен номер</string>
+    <string name="nbu_piggy_bank">NBU Piggy Bank</string>
+    <string name="login_register">Вход / Регистрация</string>
+    <string name="forward">Напред</string>
+    <string name="sendcode">Изпрати код</string>
+    <string name="enterCode">Въведи код</string>
+    <string name="phoneauthimagebutton">phoneAuthImageButton</string>
 </resources>

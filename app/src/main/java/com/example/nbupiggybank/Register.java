@@ -20,7 +20,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Register extends AppCompatActivity implements View.OnClickListener {
 
-    private EditText editTextName, editTextEGN, editTextEmail, editTextPassword;
+    private EditText editTextName, editTextPhone, editTextEmail, editTextPassword;
 
     private FirebaseAuth mAuth;
     FirebaseFirestore database = FirebaseFirestore.getInstance();
@@ -37,7 +37,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         registerUser.setOnClickListener(this);
 
         editTextName = findViewById(R.id.Name);
-        editTextEGN = findViewById(R.id.Egn);
+        editTextPhone = findViewById(R.id.phone);
         editTextEmail = findViewById(R.id.Email);
         editTextPassword = findViewById(R.id.Password);
 
@@ -55,7 +55,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     private void registerUser() {
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
-        String egn = editTextEGN.getText().toString().trim();
+        String phone = editTextPhone.getText().toString().trim();
         String name = editTextName.getText().toString().trim();
         String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
@@ -64,14 +64,14 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
             editTextName.requestFocus();
             return;
         }
-        if (egn.isEmpty()) {
-            editTextEGN.setError("Моля въведете вашето ЕГН!");
-            editTextEGN.requestFocus();
+        if (phone.isEmpty()) {
+            editTextPhone.setError("Моля въведете вашето ЕГН!");
+            editTextPhone.requestFocus();
             return;
         }
-        if (egn.length() < 10) {
-            editTextEGN.setError("Моля въведете 10 символа за вашето ЕГН!");
-            editTextEGN.requestFocus();
+        if (phone.length() < 10) {
+            editTextPhone.setError("Моля въведете 10 символа за вашето ЕГН!");
+            editTextPhone.requestFocus();
             return;
         }
         if (email.isEmpty()) {
@@ -94,11 +94,11 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
             editTextPassword.requestFocus();
         }
 
-        User user = new User(name, egn, email);
+        User user = new User(name, phone, email);
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        User user1 = new User(name, egn, email);
+                        User user1 = new User(name, phone, email);
 
                         database.collection("Users").add(user)
                                 .addOnCompleteListener(task1 -> {
