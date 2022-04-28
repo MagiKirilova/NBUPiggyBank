@@ -2,15 +2,12 @@ package com.example.nbupiggybank;
 
 public class User {
 
-    public String name,egn,email;
+    public String name, email, password, phone;
 
-    public User(){
-
-    }
-    public User(String name, String egn, String email){
+    public User(String name, String email, String password){
         this.name = name;
-        this.egn = egn;
         this.email = email;
+        this.password = password;
     }
 
     public String getName() {
@@ -21,19 +18,5 @@ public class User {
         this.name = name;
     }
 
-    public String getEgn() {
-        return egn;
-    }
 
-    public void setEgn(String egn) {
-        this.egn = egn;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 }

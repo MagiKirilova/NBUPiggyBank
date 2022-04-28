@@ -53,39 +53,12 @@
             android:layout_marginBottom="@dimen/login_register_margin_bottom"
             />
 
-        <TextView
-            android:id="@+id/phoneLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/phone"
-            android:fontFamily="sans-serif-black"
-            android:paddingStart="@dimen/padding_five"
-            android:text="@string/phonelabel"
-            android:textAlignment="center"
-            android:textColor="@color/black_02"
-            android:textSize="@dimen/label_text_size"
-            tools:ignore="RtlSymmetry" />
-
-        <EditText
-            android:id="@+id/phone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/loginRegisterBanner"
-            android:layout_centerHorizontal="true"
-            android:autofillHints=""
-            android:ems="10"
-            android:inputType="phone"
-            android:minHeight="@dimen/edit_text_min_height"
-            android:paddingStart="@dimen/padding_ten"
-            android:textColorHint="@color/black_02"
-            android:textSize="@dimen/edit_text_size"
-            tools:ignore="LabelFor,RtlSymmetry" />
 
         <Button
             android:id="@+id/Continue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/phone"
+            android:layout_below="@id/loginRegisterBanner"
             android:layout_alignParentBottom="true"
             android:layout_marginTop="@dimen/login_register_button_margin_top"
             android:background="@drawable/rounded_button"

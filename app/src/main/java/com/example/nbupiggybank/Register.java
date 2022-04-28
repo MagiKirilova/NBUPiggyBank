@@ -1,26 +1,24 @@
 package com.example.nbupiggybank;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
-
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.Objects;
 
 public class Register extends AppCompatActivity implements View.OnClickListener {
 
-    private EditText editTextName, editTextPhone, editTextEmail, editTextPassword;
+    private EditText editTextName, editTextEmail, editTextPassword;
 
     private FirebaseAuth mAuth;
     FirebaseFirestore database = FirebaseFirestore.getInstance();
@@ -37,7 +35,6 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         registerUser.setOnClickListener(this);
 
         editTextName = findViewById(R.id.Name);
-        editTextPhone = findViewById(R.id.phone);
         editTextEmail = findViewById(R.id.Email);
         editTextPassword = findViewById(R.id.Password);
 
@@ -55,7 +52,6 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     private void registerUser() {
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
-        String phone = editTextPhone.getText().toString().trim();
         String name = editTextName.getText().toString().trim();
         String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
@@ -64,16 +60,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
             editTextName.requestFocus();
             return;
         }
-        if (phone.isEmpty()) {
-            editTextPhone.setError("Моля въведете вашето ЕГН!");
-            editTextPhone.requestFocus();
-            return;
-        }
-        if (phone.length() < 10) {
-            editTextPhone.setError("Моля въведете 10 символа за вашето ЕГН!");
-            editTextPhone.requestFocus();
-            return;
-        }
+
         if (email.isEmpty()) {
             editTextEmail.setError("Моля въведете вашият имейл!");
             editTextEmail.requestFocus();
@@ -94,25 +81,23 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
             editTextPassword.requestFocus();
         }
 
-        User user = new User(name, phone, email);
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(task -> {
+        // Добавяне на имейл като допълнителна автентикация
+        // И съшо така добавяне на регистрирания потребител в collection Users
+        AuthCredential credentialEmail = EmailAuthProvider.getCredential(email, password);
+        Objects.requireNonNull(mAuth.getCurrentUser()).linkWithCredential(credentialEmail)
+                .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
-                        User user1 = new User(name, phone, email);
+                        FirebaseUser user = task.getResult().getUser();
+                        assert user != null;
+                        User userToAdd = new User(name, email, password);
+                        String userid = user.getUid();
 
-                        database.collection("Users").add(user)
-                                .addOnCompleteListener(task1 -> {
-                                    if (task1.isSuccessful()) {
-                                        Toast.makeText(Register.this, "Успешна регистрация!", Toast.LENGTH_LONG).show();
-                                    } else {
-                                        Toast.makeText(Register.this, "Неуспешна регистрация! Опитай пак!", Toast.LENGTH_LONG).show();
-                                    }
-                                });
+                        database.collection("Users").document(userid).set(userToAdd);
                     } else {
-                        Toast.makeText(Register.this, "Неуспешна регистрация!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(Register.this, "Authentication failed.",
+                                Toast.LENGTH_SHORT).show();
                     }
                 });
-
 
     }
 }
