@@ -4,12 +4,12 @@
     android:id="@+id/ScrollView01"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/white">
+    android:background="@color/deeppink">
+
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/login_relative_lay_padding"
         tools:context=".MainActivity">
 
         <TextView
@@ -17,56 +17,61 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/main_margin_top"
+            android:layout_marginStart="@dimen/main_margin_start"
+            android:layout_marginEnd="@dimen/main_margin_end"
             android:fontFamily="sans-serif-black"
             android:text="@string/nbu_piggy_bank"
             android:textAlignment="center"
-            android:textColor="@color/black_02"
+            android:textColor="@color/white"
             android:textSize="@dimen/nbu_banner_text_size"
             android:textStyle="bold" />
-
-
-        <ImageView
-            android:id="@+id/piggyIcon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/banner"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/login_margin_top"
-            android:layout_marginBottom="@dimen/login_piggy_icon_1_margin_bottom"
-            android:contentDescription="@string/piggyicon"
-            android:src="@drawable/piggycircle4">
-
-        </ImageView>
 
         <TextView
             android:id="@+id/loginRegisterBanner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/main_margin_start"
+            android:layout_marginEnd="@dimen/main_margin_end"
+            android:layout_marginTop="@dimen/main_text_margin_top"
             android:layout_centerHorizontal="true"
             android:fontFamily="sans-serif-black"
-            android:text="@string/login_register"
+            android:text="@string/bankappforchildren"
             android:textAlignment="center"
-            android:textColor="@color/black_02"
-            android:textSize="@dimen/login_register_text_size"
+            android:textColor="@color/white"
+            android:textSize="20sp"
             android:textStyle="normal"
-            android:layout_below="@id/piggyIcon"
+            android:layout_below="@id/banner"
             android:layout_marginBottom="@dimen/login_register_margin_bottom"
             />
-
 
         <Button
             android:id="@+id/Continue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/loginRegisterBanner"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="@dimen/login_register_button_margin_top"
-            android:background="@drawable/rounded_button"
+            android:layout_marginTop="@dimen/main_margin_top"
+            android:layout_marginStart="@dimen/main_margin_start"
+            android:layout_marginEnd="@dimen/main_margin_end"
+            android:background="@drawable/pink_rounded_button"
             android:minHeight="@dimen/edit_text_min_height"
             android:text="@string/forward"
-            android:textColor="@color/white"
+            android:textColor="@color/black_02"
             android:textSize="@dimen/edit_text_size"
             tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <ImageView
+            android:id="@+id/piggyIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Continue"
+            android:layout_alignParentBottom="true"
+            android:scaleType="fitEnd"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@string/piggyicon"
+            android:src="@drawable/piggy6"/>
+
+
 
 
     </RelativeLayout>
