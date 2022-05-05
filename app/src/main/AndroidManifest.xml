@@ -5,11 +5,13 @@
 
     <application
         android:allowBackup="true"
+        android:icon="@drawable/piggycircle2"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.NBUPiggyBank"
-        android:icon="@drawable/piggycircle2">
-
+        android:theme="@style/Theme.NBUPiggyBank">
+        <activity
+            android:name=".changePhone"
+            android:exported="false" />
         <activity
             android:name=".Launch"
             android:exported="true"

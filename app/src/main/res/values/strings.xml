@@ -45,4 +45,6 @@
     <string name="title_activity_maps">MapsActivity</string>
     <string name="bankappforchildren">Банково приложение за деца</string>
     <string name="plus_one">+1</string>
+    <string name="newPhoneNumber">Нов мобилен номер</string>
+    <string name="enterWithEmail">Влез с имейл</string>
 </resources>

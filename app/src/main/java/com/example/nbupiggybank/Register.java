@@ -142,7 +142,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                     if (task.isSuccessful()) {
                         FirebaseUser user = task.getResult().getUser();
                         assert user != null;
-                        User userToAdd = new User(name, email, password);
+                        User userToAdd = new User(name, email);
                         String userid = user.getUid();
 
                         database.collection("Users").document(userid).set(userToAdd);

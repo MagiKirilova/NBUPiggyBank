@@ -65,6 +65,7 @@
             android:id="@+id/piggyIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/main_margin_top"
             android:layout_below="@id/Continue"
             android:layout_alignParentBottom="true"
             android:scaleType="fitEnd"
