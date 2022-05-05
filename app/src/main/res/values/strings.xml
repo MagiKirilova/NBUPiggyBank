@@ -44,4 +44,5 @@
     <string name="sendphonecode">Изпрати код</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="bankappforchildren">Банково приложение за деца</string>
+    <string name="plus_one">+1</string>
 </resources>

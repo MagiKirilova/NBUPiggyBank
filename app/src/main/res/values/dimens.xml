@@ -33,10 +33,13 @@
     <dimen name="land_register_piggy_margin_bottom">50dp</dimen>
     <dimen name="verify_phone_margin_top">130dp</dimen>
     <dimen name="land_verify_phone_margin_top">105dp</dimen>
-    <dimen name="verify_phone_number_top">20dp</dimen>
+    <dimen name="verify_phone_number_top">10dp</dimen>
+    <dimen name="verify_phone_code_label_top">50dp</dimen>
     <dimen name="register_piggy_margin_top">42dp</dimen>
     <dimen name="land_register_margin_top">40dp</dimen>
-    <dimen name="land_phoneAuth_margin_top">56dp</dimen>
+    <dimen name="land_phoneAuth_margin_top">104dp</dimen>
+    <dimen name="land_phone_number_margin_top">89dp</dimen>
+    <dimen name="land_phone_code_margin_top">30dp</dimen>
 
 </resources>
 

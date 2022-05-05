@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/ScrollView01"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/deeppink">
+    android:background="@color/deepPink">
 
 
     <RelativeLayout
@@ -53,12 +54,12 @@
             android:layout_marginTop="@dimen/main_margin_top"
             android:layout_marginStart="@dimen/main_margin_start"
             android:layout_marginEnd="@dimen/main_margin_end"
-            android:background="@drawable/pink_rounded_button"
             android:minHeight="@dimen/edit_text_min_height"
+            app:backgroundTintMode="add"
+            android:background="@color/white"
             android:text="@string/forward"
             android:textColor="@color/black_02"
-            android:textSize="@dimen/edit_text_size"
-            tools:ignore="DuplicateSpeakableTextCheck" />
+            android:textSize="@dimen/edit_text_size" />
 
         <ImageView
             android:id="@+id/piggyIcon"

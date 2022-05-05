@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
@@ -18,8 +21,10 @@ import java.util.Objects;
 
 public class Register extends AppCompatActivity implements View.OnClickListener {
 
-    private EditText editTextName, editTextEmail, editTextPassword;
-
+    private TextInputLayout inputTextName, inputTextEmail, inputTextPassword;
+    private String email;
+    private String password;
+    private String name;
     private FirebaseAuth mAuth;
     FirebaseFirestore database = FirebaseFirestore.getInstance();
 
@@ -34,9 +39,57 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         TextView registerUser = findViewById(R.id.registerUser);
         registerUser.setOnClickListener(this);
 
-        editTextName = findViewById(R.id.Name);
-        editTextEmail = findViewById(R.id.Email);
-        editTextPassword = findViewById(R.id.Password);
+        inputTextName = findViewById(R.id.Name);
+        inputTextEmail = findViewById(R.id.Email);
+        inputTextPassword = findViewById(R.id.Password);
+
+        Objects.requireNonNull(inputTextName.getEditText()).addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                name = charSequence.toString();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+        Objects.requireNonNull(inputTextEmail.getEditText()).addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                email = charSequence.toString();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+            }
+        });
+
+        Objects.requireNonNull(inputTextPassword.getEditText()).addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                password = charSequence.toString();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
 
     }
 
@@ -50,35 +103,35 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     }
 
     private void registerUser() {
-        String email = editTextEmail.getText().toString().trim();
-        String password = editTextPassword.getText().toString().trim();
-        String name = editTextName.getText().toString().trim();
+        email = email.trim();
+        password = password.trim();
+        name = name.trim();
         String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
         if (name.isEmpty()) {
-            editTextName.setError("Моля въведете вашето име!");
-            editTextName.requestFocus();
+            inputTextName.setError("Моля въведете вашето име!");
+            inputTextName.requestFocus();
             return;
         }
 
         if (email.isEmpty()) {
-            editTextEmail.setError("Моля въведете вашият имейл!");
-            editTextEmail.requestFocus();
+            inputTextEmail.setError("Моля въведете вашият имейл!");
+            inputTextEmail.requestFocus();
             return;
         }
         if (!email.matches(emailPattern)) {
-            editTextEmail.setError("Моля въведете правилен имейл!");
-            editTextEmail.requestFocus();
+            inputTextEmail.setError("Моля въведете правилен имейл!");
+            inputTextEmail.requestFocus();
             return;
         }
         if (password.isEmpty()) {
-            editTextPassword.setError("Моля въведете вашата парола!");
-            editTextPassword.requestFocus();
+            inputTextPassword.setError("Моля въведете вашата парола!");
+            inputTextPassword.requestFocus();
             return;
         }
         if (password.length() < 6) {
-            editTextPassword.setError("Дължината на паролата трябва да е не по-малка от 6 символа!");
-            editTextPassword.requestFocus();
+            inputTextPassword.setError("Дължината на паролата трябва да е не по-малка от 6 символа!");
+            inputTextPassword.requestFocus();
         }
 
         // Добавяне на имейл като допълнителна автентикация
