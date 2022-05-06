@@ -3,6 +3,7 @@ package com.example.nbupiggybank;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -146,8 +147,13 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                         String userid = user.getUid();
 
                         database.collection("Users").document(userid).set(userToAdd);
+
+                        Intent i;
+                        i = new Intent(Register.this, ProfileStartActivity.class);
+                        startActivity(i);
+                        finish();
                     } else {
-                        Toast.makeText(Register.this, "Authentication failed.",
+                        Toast.makeText(Register.this, "Изникна проблем с регистрацията!",
                                 Toast.LENGTH_SHORT).show();
                     }
                 });

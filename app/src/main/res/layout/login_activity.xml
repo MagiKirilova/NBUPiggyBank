@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ScrollView01"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/login_relative_lay_padding"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/banner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/nbu_piggy_bank"
+            android:textAlignment="center"
+            android:textColor="@color/black_02"
+            android:textSize="@dimen/nbu_banner_text_size"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/piggyIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/banner"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/login_margin_top"
+            android:layout_marginBottom="@dimen/login_piggy_icon_1_margin_bottom"
+            android:contentDescription="@string/piggyicon"
+            android:src="@drawable/piggycircle4">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/bannerLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/piggyIcon"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/LoginBanner"
+            android:textAlignment="center"
+            android:textColor="@color/black_02"
+            android:textSize="@dimen/login_register_text_size"
+            android:textStyle="bold"
+            android:layout_marginBottom="@dimen/login_register_margin_bottom"/>
+
+
+        <TextView
+            android:id="@+id/phoneLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/phone"
+            android:layout_marginTop="0dp"
+            android:fontFamily="sans-serif-black"
+            android:paddingStart="@dimen/padding_five"
+            android:text="@string/phonelabel"
+            android:textAlignment="center"
+            android:textColor="@color/black_02"
+            android:textSize="@dimen/label_text_size"
+            tools:ignore="RtlSymmetry" />
+
+        <EditText
+            android:id="@+id/phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bannerLogin"
+            android:layout_centerHorizontal="true"
+            android:autofillHints=""
+            android:ems="10"
+            android:inputType="phone"
+            android:minHeight="@dimen/edit_text_min_height"
+            android:paddingStart="@dimen/padding_ten"
+            android:textColorHint="@color/black_02"
+            android:textSize="@dimen/edit_text_size"
+            tools:ignore="LabelFor,RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/passLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/phone"
+            android:layout_marginTop="@dimen/label_margin"
+            android:fontFamily="sans-serif-black"
+            android:paddingStart="@dimen/padding_five"
+            android:text="@string/passLabel"
+            android:textAlignment="center"
+            android:textColor="@color/black_02"
+            android:textSize="@dimen/label_text_size"
+            tools:ignore="RtlSymmetry" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/phone"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/login_second_label_padding"
+            android:autofillHints=""
+            android:ems="10"
+            android:inputType="textPassword"
+            android:minHeight="@dimen/edit_text_min_height"
+            android:paddingStart="@dimen/padding_ten"
+            android:textColorHint="@color/black_02"
+            android:textSize="@dimen/edit_text_size"
+            tools:ignore="LabelFor,RtlSymmetry" />
+
+        <Button
+            android:id="@+id/Login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/password"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/login_button_margin_top"
+            android:background="@drawable/rounded_button"
+            android:minHeight="@dimen/edit_text_min_height"
+            android:text="@string/buttonlogin"
+            android:textColor="@color/white"
+            android:textSize="@dimen/edit_text_size"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <TextView
+            android:id="@+id/ForgotPass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Login"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/login_margin_top"
+            android:text="@string/forgotpass"
+            android:textColor="@color/black_02"
+            android:textSize="@dimen/edit_text_size" />
+
+
+
+    </RelativeLayout>
+</ScrollView>

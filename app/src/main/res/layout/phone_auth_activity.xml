@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ScrollView03"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/register_relative_lay_padding"
+        tools:context=".Register">
+
+        <ImageView
+            android:id="@+id/piggyAuthIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/register_piggy_margin_top"
+            android:layout_marginBottom="@dimen/register_icon_margin_bottom"
+            android:contentDescription="@string/piggyregister"
+            android:src="@drawable/piggycircle4" />
+
+        <TextView
+            android:id="@+id/loginAuthBanner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/login_register"
+            android:textAlignment="center"
+            android:textColor="@color/black_02"
+            android:textSize="@dimen/login_register_text_size"
+            android:textStyle="normal"
+            android:layout_below="@id/piggyAuthIcon"
+            android:layout_marginBottom="@dimen/login_register_margin_bottom"
+            />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/phoneNumberEdit"
+            android:layout_width="match_parent"
+            android:layout_below="@id/loginAuthBanner"
+            android:layout_height="wrap_content"
+            android:hint="@string/phonelabel"
+            android:textColorHint="@color/black_02"
+            android:textSize="@dimen/edit_text_size"
+            app:startIconTint="@null"
+            app:startIconDrawable="@drawable/ic_baseline_exposure_plus_1_24"
+            style="@style/TextInputLayoutStyle"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black_02"
+                android:inputType="phone"
+               />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/phoneAuthButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/phoneNumberEdit"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/verify_phone_number_top"
+            android:background="@drawable/rounded_button"
+            android:minHeight="@dimen/edit_text_min_height"
+            android:text="@string/sendphonecode"
+            android:textColor="@color/white"
+            android:textSize="@dimen/edit_text_size"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/phoneCode"
+            android:layout_width="match_parent"
+            android:layout_below="@id/phoneAuthButton"
+            android:layout_height="wrap_content"
+            android:hint="@string/enterCode"
+            android:layout_marginTop="@dimen/verify_phone_code_label_top"
+            android:textColorHint="@color/black_02"
+            android:textSize="@dimen/edit_text_size"
+            style="@style/TextInputLayoutStyle"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black_02"
+                android:inputType="number"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/verifyPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/phoneCode"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/verify_phone_number_top"
+            android:background="@drawable/rounded_button"
+            android:minHeight="@dimen/edit_text_min_height"
+            android:text="@string/forward"
+            android:textColor="@color/white"
+            android:textSize="@dimen/edit_text_size"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <Button
+            android:id="@+id/cannotLogIn"
+            android:layout_below="@id/verifyPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/verify_phone_number_top"
+            android:text="@string/newPhoneNumber"
+            style="?android:attr/borderlessButtonStyle"/>
+    </RelativeLayout>
+</ScrollView>
