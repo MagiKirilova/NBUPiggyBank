@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/register_relative_lay_padding"
-        tools:context=".emailPasswordLogin">
+        tools:context=".changePhone">
 
         <ImageView
             android:id="@+id/piggyAuthIcon"
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:fontFamily="sans-serif-black"
-            android:text="@string/enterWithEmail"
+            android:text="@string/newPhoneNumber"
             android:textAlignment="center"
             android:textColor="@color/black_02"
             android:textSize="@dimen/login_register_text_size"
@@ -39,11 +39,11 @@
             />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/emailLogin"
+            android:id="@+id/newPhoneNumber"
             android:layout_width="match_parent"
             android:layout_below="@id/loginAuthBanner"
             android:layout_height="wrap_content"
-            android:hint="@string/emailLabel"
+            android:hint="@string/phonelabel"
             android:textColorHint="@color/black_02"
             android:textSize="@dimen/edit_text_size"
             app:startIconTint="@null"
@@ -54,17 +54,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black_02"
-                android:inputType="textEmailAddress"
+                android:inputType="phone"
                 />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <Button
+            android:id="@+id/sendCodeForNewPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/newPhoneNumber"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/verify_phone_number_top"
+            android:background="@drawable/rounded_button"
+            android:minHeight="@dimen/edit_text_min_height"
+            android:text="@string/sendphonecode"
+            android:textColor="@color/white"
+            android:textSize="@dimen/edit_text_size"
+            tools:ignore="DuplicateSpeakableTextCheck" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/passwordLogin"
+            android:id="@+id/newPhoneCode"
             android:layout_width="match_parent"
-            android:layout_below="@id/emailLogin"
+            android:layout_below="@id/sendCodeForNewPhoneNumber"
             android:layout_height="wrap_content"
-            android:hint="@string/passLabel"
+            android:hint="@string/enterCode"
             android:layout_marginTop="@dimen/verify_phone_code_label_top"
             android:textColorHint="@color/black_02"
             android:textSize="@dimen/edit_text_size"
@@ -75,17 +88,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black_02"
-                android:inputType="textPassword"
+                android:inputType="number"
                 />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/verifyEmailAndPass"
+            android:id="@+id/changePhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/passwordLogin"
+            android:layout_below="@id/newPhoneCode"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/verify_phone_code_label_top"
+            android:layout_marginTop="@dimen/verify_phone_number_top"
             android:background="@drawable/rounded_button"
             android:minHeight="@dimen/edit_text_min_height"
             android:text="@string/forward"

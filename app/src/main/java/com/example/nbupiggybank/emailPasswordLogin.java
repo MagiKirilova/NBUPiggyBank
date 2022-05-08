@@ -18,7 +18,6 @@ import java.util.Objects;
 public class emailPasswordLogin extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private String email, password;
-    private TextInputLayout emailInput, passwordInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +25,8 @@ public class emailPasswordLogin extends AppCompatActivity {
         setContentView(R.layout.activity_email_password_login);
 
         Button emailAndPassAuth = findViewById(R.id.verifyEmailAndPass);
-        emailInput = findViewById(R.id.emailLogin);
-        passwordInput = findViewById(R.id.passwordLogin);
+        TextInputLayout emailInput = findViewById(R.id.emailLogin);
+        TextInputLayout passwordInput = findViewById(R.id.passwordLogin);
 
         mAuth = FirebaseAuth.getInstance();
         mAuth.getFirebaseAuthSettings().setAppVerificationDisabledForTesting(true);
