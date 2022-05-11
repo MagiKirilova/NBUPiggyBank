@@ -13,28 +13,28 @@
         tools:context=".ProfileOne">
 
         <TextView
-            android:id="@+id/currentBalance"
+            android:id="@+id/hello"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:fontFamily="sans-serif-black"
-            android:text="@string/nalichnarazpolagaemost"
+            android:text="@string/Hello"
             android:textAlignment="center"
             android:textColor="@color/black_02"
-            android:textSize="20sp"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/Transanctions"
+            android:id="@+id/customerName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/currentBalance"
+            android:layout_below="@id/hello"
             android:layout_centerHorizontal="true"
             android:fontFamily="sans-serif-black"
-            android:text="@string/recentTransactions"
+            android:text="@string/Име"
             android:textAlignment="center"
             android:textColor="@color/black_02"
-            android:textSize="40sp"
+            android:textSize="26sp"
             android:textStyle="bold" />
 
     </RelativeLayout>
