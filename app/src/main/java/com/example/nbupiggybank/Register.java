@@ -18,7 +18,12 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Random;
 
 public class Register extends AppCompatActivity implements View.OnClickListener {
 
@@ -26,9 +31,10 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     private String email;
     private String password;
     private String name;
+    private String iban, card;
     private FirebaseAuth mAuth;
     FirebaseFirestore database = FirebaseFirestore.getInstance();
-
+    HashMap<String, String> accountInfo = new HashMap<String, String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +49,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         inputTextName = findViewById(R.id.Name);
         inputTextEmail = findViewById(R.id.Email);
         inputTextPassword = findViewById(R.id.Password);
+
 
         Objects.requireNonNull(inputTextName.getEditText()).addTextChangedListener(new TextWatcher() {
             @Override
@@ -135,6 +142,10 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
             inputTextPassword.requestFocus();
         }
 
+        createAccountInfo(accountInfo);
+        getIbanAndCard(accountInfo);
+
+
         // Добавяне на имейл като допълнителна автентикация
         // И съшо така добавяне на регистрирания потребител в collection Users
         AuthCredential credentialEmail = EmailAuthProvider.getCredential(email, password);
@@ -143,7 +154,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                     if (task.isSuccessful()) {
                         FirebaseUser user = task.getResult().getUser();
                         assert user != null;
-                        User userToAdd = new User(name, email);
+                        User userToAdd = new User(name, email, iban,card);
                         String userid = user.getUid();
 
                         database.collection("Users").document(userid).set(userToAdd);
@@ -158,5 +169,20 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                     }
                 });
 
+    }
+    // При регистриране на потребител се взима 1 от 3-те акаунта
+    private void getIbanAndCard(HashMap<String, String> accountInfo){
+       Random random = new Random();
+       List<String> keys = new ArrayList<>(accountInfo.keySet());
+       iban = keys.get(random.nextInt(keys.size()));
+       card = accountInfo.get(iban);
+    }
+
+
+    // Понеже приложението е демо, за сега има само 3 акаунта с по 1 карта вътре. Данните не са инстински
+    private void createAccountInfo(HashMap<String, String> accountInfo){
+        accountInfo.put("BG09PBBB94007754115719","4062********3156");
+        accountInfo.put("BG22PBBB91551177529236","4894********1499");
+        accountInfo.put("BG95PBBB94006116647374","4893********8705");
     }
 }
