@@ -21,7 +21,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.Random;
 
@@ -31,10 +30,14 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     private String email;
     private String password;
     private String name;
-    private String iban, card;
+    private String iban;
+    private String card;
+    private String cardExpiryDate;
+    private Double cardAmount;
     private FirebaseAuth mAuth;
     FirebaseFirestore database = FirebaseFirestore.getInstance();
-    HashMap<String, String> accountInfo = new HashMap<String, String>();
+    HashMap<String, String> accountInfo = new HashMap<>();
+    HashMap<String, Double> cardInfo = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -145,6 +148,9 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         createAccountInfo(accountInfo);
         getIbanAndCard(accountInfo);
 
+        createCardInfo(cardInfo);
+        getExpiryDateAndAmount(cardInfo);
+
 
         // Добавяне на имейл като допълнителна автентикация
         // И съшо така добавяне на регистрирания потребител в collection Users
@@ -154,7 +160,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                     if (task.isSuccessful()) {
                         FirebaseUser user = task.getResult().getUser();
                         assert user != null;
-                        User userToAdd = new User(name, email, iban,card);
+                        User userToAdd = new User(name, email, iban, card, cardExpiryDate, cardAmount);
                         String userid = user.getUid();
 
                         database.collection("Users").document(userid).set(userToAdd);
@@ -184,5 +190,18 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         accountInfo.put("BG09PBBB94007754115719","4062********3156");
         accountInfo.put("BG22PBBB91551177529236","4894********1499");
         accountInfo.put("BG95PBBB94006116647374","4893********8705");
+    }
+
+    private void getExpiryDateAndAmount(HashMap<String, Double> cardInfo){
+        Random random = new Random();
+        List<String> keys = new ArrayList<>(cardInfo.keySet());
+        cardExpiryDate = keys.get(random.nextInt(keys.size()));
+        cardAmount = cardInfo.get(cardExpiryDate);
+    }
+
+    private void createCardInfo(HashMap<String, Double> cardInfo){
+        cardInfo.put("05/23", 456.78);
+        cardInfo.put("09/24", 532.25);
+        cardInfo.put("01/26", 498.55);
     }
 }

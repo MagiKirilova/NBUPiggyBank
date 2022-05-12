@@ -47,5 +47,7 @@
     <string name="plus_one">+1</string>
     <string name="newPhoneNumber">Нов мобилен номер</string>
     <string name="enterWithEmail">Влез с имейл</string>
-    <string name="Hello">Здравей</string>
+    <string name="Hello">Здравей,</string>
+    <string name="redpandaicon">redPandaIcon</string>
+    <string name="cardNumber">Номер на карта</string>
 </resources>
