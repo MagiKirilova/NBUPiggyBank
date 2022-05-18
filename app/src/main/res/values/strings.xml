@@ -50,4 +50,14 @@
     <string name="Hello">Здравей,</string>
     <string name="redpandaicon">redPandaIcon</string>
     <string name="cardNumber">Номер на карта</string>
+    <string name="availableAmount">Налична сума</string>
+    <string name="bgn">BGN</string>
+    <string name="ExpiryDate">Дата</string>
+    <string name="Amount">Сума</string>
+    <string name="shop">Магазин</string>
+    <string name="amountExample">- 10</string>
+    <string name="amountExample2">- 10.25</string>
+    <string name="exampleDate1">10/05/2022</string>
+    <string name="amountExample3">10.25</string>
+    <string name="amountExample4">12.60</string>
 </resources>

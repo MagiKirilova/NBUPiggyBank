@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/NBUPiggyBankv2/app/src/main/res/drawable/ic_baseline_exposure_plus_1_24.xml" value="0.221" />
+        <entry key="..\:/NBUPiggyBankv2/app/src/main/res/drawable/ic_baseline_shopping_bag_24.xml" value="0.2205" />
         <entry key="..\:/NBUPiggyBankv2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.248" />
         <entry key="..\:/NBUPiggyBankv2/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.248" />
         <entry key="..\:/NBUPiggyBankv2/app/src/main/res/drawable/pink_rounded_button.xml" value="0.221" />
@@ -11,6 +12,7 @@
         <entry key="..\:/NBUPiggyBankv2/app/src/main/res/drawable/rounded_button.xml" value="0.248" />
         <entry key="..\:/NBUPiggyBankv2/app/src/main/res/drawable/splashscreen.xml" value="0.248" />
         <entry key="..\:/NBUPiggyBankv2/app/src/main/res/drawable/text_color_select.xml" value="0.248" />
+        <entry key="..\:/NBUPiggyBankv2/app/src/main/res/drawable/transaction_border.xml" value="0.2205" />
         <entry key="..\:/NBUPiggyBankv2/app/src/main/res/drawable/white_rounded_button.xml" value="0.248" />
         <entry key="..\:/NBUPiggyBankv2/app/src/main/res/layout-land/activity_main.xml" value="0.20502645502645503" />
         <entry key="..\:/NBUPiggyBankv2/app/src/main/res/layout-land/phone_auth_activity.xml" value="0.1" />
@@ -24,7 +26,8 @@
         <entry key="..\:/NBUPiggyBankv2/app/src/main/res/layout/activity_profileone.xml" value="0.19880290722530997" />
         <entry key="..\:/NBUPiggyBankv2/app/src/main/res/layout/login_activity.xml" value="0.2" />
         <entry key="..\:/NBUPiggyBankv2/app/src/main/res/layout/phone_auth_activity.xml" value="0.2" />
-        <entry key="..\:/NBUPiggyBankv2/app/src/main/res/layout/profile_start.xml" value="0.16799999999999998" />
+        <entry key="..\:/NBUPiggyBankv2/app/src/main/res/layout/profile_start.xml" value="0.264" />
+        <entry key="..\:/NBUPiggyBankv2/app/src/main/res/layout/recyclerview_transactions_item.xml" value="0.264" />
         <entry key="..\:/NBUPiggyBankv2/app/src/main/res/layout/register.xml" value="0.2" />
         <entry key="..\:/nbupiggybank/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.248" />
         <entry key="..\:/nbupiggybank/app/src/main/res/drawable/ic_launcher_background.xml" value="0.248" />
