@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ScrollView03"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/transferFragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="0dp"
+        tools:context=".TransferFragment">
+
+        <TextView
+            android:id="@+id/transactionDemoBanner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/demoTransaction"
+            android:layout_marginStart="40dp"
+            android:textAlignment="center"
+            android:textColor="@color/black_02"
+            android:layout_marginTop="30dp"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/fromAccountBanner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/fromAccount"
+            android:layout_marginStart="40dp"
+            android:layout_below="@id/transactionDemoBanner"
+            android:textAlignment="center"
+            android:textColor="@color/black_02"
+            android:layout_marginTop="76dp"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/demoFromAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/account"
+            android:layout_marginStart="40dp"
+            android:layout_below="@id/fromAccountBanner"
+            android:textAlignment="center"
+            android:textColor="@color/deepPink"
+            android:layout_marginTop="5dp"
+            android:textSize="22sp"
+            android:textStyle="normal"
+            />
+
+        <TextView
+            android:id="@+id/availableMoneyBanner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/availableAmount"
+            android:layout_marginStart="40dp"
+            android:layout_below="@id/demoFromAccount"
+            android:textAlignment="center"
+            android:textColor="@color/black_02"
+            android:layout_marginTop="24dp"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/demoAvailableMoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/Amount"
+            android:layout_marginStart="40dp"
+            android:layout_below="@id/availableMoneyBanner"
+            android:textAlignment="center"
+            android:textColor="@color/deepPink"
+            android:layout_marginTop="5dp"
+            android:textSize="22sp"
+            android:textStyle="normal"
+            />
+
+        <TextView
+            android:id="@+id/BGN1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/bgn"
+            android:layout_marginStart="46dp"
+            android:layout_below="@id/availableMoneyBanner"
+            android:layout_toEndOf="@id/demoAvailableMoney"
+            android:textAlignment="center"
+            android:textColor="@color/deepPink"
+            android:layout_marginTop="5dp"
+            android:textSize="22sp"
+            android:textStyle="normal"
+            />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/recipientName"
+            android:layout_width="match_parent"
+            android:layout_below="@id/demoAvailableMoney"
+            android:layout_height="wrap_content"
+            android:hint="@string/recipient"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:textColorHint="@color/black_02"
+            android:textSize="@dimen/edit_text_size"
+            style="@style/TextInputLayoutStyle"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black_02"
+                android:inputType="text"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/recipientIban"
+            android:layout_width="match_parent"
+            android:layout_below="@id/recipientName"
+            android:layout_height="wrap_content"
+            android:hint="@string/recipientIban"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginTop="30dp"
+            android:textColorHint="@color/black_02"
+            android:textSize="@dimen/edit_text_size"
+            style="@style/TextInputLayoutStyle"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black_02"
+                android:inputType="text"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/amountToSend"
+            android:layout_width="match_parent"
+            android:layout_below="@id/recipientIban"
+            android:layout_height="wrap_content"
+            android:hint="@string/Amount"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="200dp"
+            android:textColorHint="@color/black_02"
+            android:textSize="@dimen/edit_text_size"
+            style="@style/TextInputLayoutStyle"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black_02"
+                android:inputType="text"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/BGN2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/bgn"
+            android:layout_marginStart="140dp"
+            android:layout_below="@id/recipientIban"
+            android:layout_toEndOf="@id/demoAvailableMoney"
+            android:textAlignment="center"
+            android:textColor="@color/deepPink"
+            android:layout_marginTop="45dp"
+            android:textSize="24sp"
+            android:textStyle="normal"
+            />
+
+        <Button
+            android:id="@+id/buttonMakeTransferDemo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/amountToSend"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginStart="40dp"
+            android:background="@drawable/rounded_button"
+            android:minHeight="@dimen/edit_text_min_height"
+            android:text="@string/sendMoney"
+            android:textColor="@color/white"
+            android:textSize="@dimen/edit_text_size"
+            />
+
+    </RelativeLayout>
+
+
+</ScrollView>

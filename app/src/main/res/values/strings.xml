@@ -55,9 +55,25 @@
     <string name="ExpiryDate">Дата</string>
     <string name="Amount">Сума</string>
     <string name="shop">Магазин</string>
-    <string name="amountExample">- 10</string>
-    <string name="amountExample2">- 10.25</string>
+    <string name="amountExample">-10</string>
+    <string name="amountExample2">-10.25</string>
     <string name="exampleDate1">10/05/2022</string>
     <string name="amountExample3">10.25</string>
     <string name="amountExample4">12.60</string>
+    <string name="transactions">Транзакции</string>
+    <string name="menuBegin">Начало</string>
+    <string name="menuProfile">Профил</string>
+    <string name="menuTransactions">Преводи</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="myProfile">Моят профил</string>
+    <string name="cardBanner">Карта</string>
+    <string name="privateInfo">Лични данни</string>
+    <string name="iban">IBAN</string>
+    <string name="demoTransaction">Демо транзакция</string>
+    <string name="fromAccount">От сметка</string>
+    <string name="account">Сметка</string>
+    <string name="recipient">Получател</string>
+    <string name="recipientIban">IBAN на получател</string>
+    <string name="sendMoney">Преведи</string>
 </resources>

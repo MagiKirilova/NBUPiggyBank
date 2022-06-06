@@ -12,15 +12,23 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.Timestamp;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.type.DateTime;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
 import java.util.Random;
 
@@ -34,6 +42,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     private String card;
     private String cardExpiryDate;
     private Double cardAmount;
+    private String phoneNumber;
     private FirebaseAuth mAuth;
     FirebaseFirestore database = FirebaseFirestore.getInstance();
     HashMap<String, String> accountInfo = new HashMap<>();
@@ -52,6 +61,9 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         inputTextName = findViewById(R.id.Name);
         inputTextEmail = findViewById(R.id.Email);
         inputTextPassword = findViewById(R.id.Password);
+
+        Intent i = getIntent();
+        phoneNumber = i.getStringExtra("phoneNumber");
 
 
         Objects.requireNonNull(inputTextName.getEditText()).addTextChangedListener(new TextWatcher() {
@@ -160,10 +172,18 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                     if (task.isSuccessful()) {
                         FirebaseUser user = task.getResult().getUser();
                         assert user != null;
-                        User userToAdd = new User(name, email, iban, card, cardExpiryDate, cardAmount);
+                        User userToAdd = new User(name, email, iban, card, cardExpiryDate, cardAmount, phoneNumber);
                         String userid = user.getUid();
 
+                        Timestamp timestamp = Timestamp.now();
+
+                        Date dateNew = timestamp.toDate();
+                        String dateThis = new SimpleDateFormat("dd/MM/yyyy", Locale.GERMANY).format(dateNew);
+
+                        Transaction transaction = new Transaction(timestamp, dateThis, "0.0", "Lidl", "10.80");
+
                         database.collection("Users").document(userid).set(userToAdd);
+                        database.collection("Users").document(userid).collection("transactions").document().set(transaction);
 
                         Intent i;
                         i = new Intent(Register.this, ProfileStartActivity.class);
@@ -187,9 +207,9 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
 
     // Понеже приложението е демо, за сега има само 3 акаунта с по 1 карта вътре. Данните не са инстински
     private void createAccountInfo(HashMap<String, String> accountInfo){
-        accountInfo.put("BG09PBBB94007754115719","4062********3156");
-        accountInfo.put("BG22PBBB91551177529236","4894********1499");
-        accountInfo.put("BG95PBBB94006116647374","4893********8705");
+        accountInfo.put("BG09PBBB94007754115719","4062 **** **** 3156");
+        accountInfo.put("BG22PBBB91551177529236","4894 **** **** 1499");
+        accountInfo.put("BG95PBBB94006116647374","4893 **** **** 8705");
     }
 
     private void getExpiryDateAndAmount(HashMap<String, Double> cardInfo){

@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ScrollView03"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/profileFragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="0dp"
+        tools:context=".ProfileOne">
+
+        <TextView
+            android:id="@+id/myProfileBanner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/myProfile"
+            android:layout_marginStart="40dp"
+            android:textAlignment="center"
+            android:textColor="@color/black_02"
+            android:layout_marginTop="30dp"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/myCardBanner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/cardBanner"
+            android:layout_marginStart="40dp"
+            android:layout_below="@id/myProfileBanner"
+            android:textAlignment="center"
+            android:textColor="@color/black_02"
+            android:layout_marginTop="24dp"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_gravity="center"
+            android:layout_below="@id/myCardBanner"
+            android:layout_marginTop="10dp"
+            android:layout_width="400dp"
+            android:layout_height="200dp"
+            card_view:cardCornerRadius="4dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            >
+
+            <ImageView
+                android:id="@+id/visaBackground"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:contentDescription="@string/redpandaicon"
+                android:src="@drawable/bg3" />
+
+            <ImageView
+                android:id="@+id/visaLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/welcomeLayout"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="230dp"
+                android:contentDescription="@string/redpandaicon"
+                android:src="@drawable/visa_logo4" />
+
+
+            <TextView
+                android:id="@+id/cardNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="140dp"
+                android:layout_marginStart="20dp"
+                android:fontFamily="sans-serif-black"
+                android:text="@string/cardNumber"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/cardAmountBanner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                android:layout_marginStart="20dp"
+                android:fontFamily="sans-serif-black"
+                android:text="@string/availableAmount"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/cardAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="90dp"
+                android:layout_marginStart="20dp"
+                android:fontFamily="sans-serif-black"
+                android:text="@string/Amount"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/cardExpiryDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="140dp"
+                android:layout_marginStart="246dp"
+                android:fontFamily="sans-serif-black"
+                android:text="@string/ExpiryDate"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/BGN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="90dp"
+                android:layout_marginStart="96dp"
+                android:fontFamily="sans-serif-black"
+                android:text="@string/bgn"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/myInfoBanner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/privateInfo"
+            android:layout_marginStart="40dp"
+            android:textAlignment="center"
+            android:layout_below="@id/card_view"
+            android:textColor="@color/black_02"
+            android:layout_marginTop="24dp"
+            android:textSize="28sp"
+            android:textStyle="bold"
+           />
+
+        <TextView
+            android:id="@+id/myNameBanner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/name"
+            android:layout_marginStart="40dp"
+            android:layout_below="@id/myInfoBanner"
+            android:textAlignment="center"
+            android:textColor="@color/black_02"
+            android:layout_marginTop="20dp"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/myNameProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/name"
+            android:layout_marginStart="40dp"
+            android:layout_below="@id/myNameBanner"
+            android:textAlignment="center"
+            android:textColor="@color/deepPink"
+            android:layout_marginTop="5dp"
+            android:textSize="22sp"
+            android:textStyle="normal"
+            />
+
+        <TextView
+            android:id="@+id/myEmailBanner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/emailLabel"
+            android:layout_marginStart="40dp"
+            android:layout_below="@id/myNameProfile"
+            android:textAlignment="center"
+            android:textColor="@color/black_02"
+            android:layout_marginTop="25dp"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/myEmailProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/emailLabel"
+            android:layout_marginStart="40dp"
+            android:layout_below="@id/myEmailBanner"
+            android:textAlignment="center"
+            android:textColor="@color/deepPink"
+            android:layout_marginTop="5dp"
+            android:textSize="22sp"
+            android:textStyle="normal"
+            />
+
+        <TextView
+            android:id="@+id/myIbanBanner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/iban"
+            android:layout_marginStart="40dp"
+            android:layout_below="@id/myEmailProfile"
+            android:textAlignment="center"
+            android:textColor="@color/black_02"
+            android:layout_marginTop="25dp"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/myIbanProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/iban"
+            android:layout_marginStart="40dp"
+            android:layout_below="@id/myIbanBanner"
+            android:textAlignment="center"
+            android:textColor="@color/deepPink"
+            android:layout_marginTop="5dp"
+            android:textSize="22sp"
+            android:textStyle="normal"
+            />
+
+        <TextView
+            android:id="@+id/myPhoneBanner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/phonelabel"
+            android:layout_marginStart="40dp"
+            android:layout_below="@id/myIbanProfile"
+            android:textAlignment="center"
+            android:textColor="@color/black_02"
+            android:layout_marginTop="25dp"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/myPhoneProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/phonelabel"
+            android:layout_marginStart="40dp"
+            android:layout_below="@id/myPhoneBanner"
+            android:textAlignment="center"
+            android:textColor="@color/deepPink"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="40dp"
+            android:textSize="22sp"
+            android:textStyle="normal"
+            />
+
+    </RelativeLayout>
+
+
+</ScrollView>

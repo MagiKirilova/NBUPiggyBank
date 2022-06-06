@@ -118,6 +118,7 @@ public class PhoneAuth extends AppCompatActivity {
                         Intent i;
                         if (newUser) {
                             i = new Intent(PhoneAuth.this, Register.class);
+                            i.putExtra("phoneNumber", phoneNumber);
                         } else {
                             i = new Intent(PhoneAuth.this, ProfileStartActivity.class);
                         }

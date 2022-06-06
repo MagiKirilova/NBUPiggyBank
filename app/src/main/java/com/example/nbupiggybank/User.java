@@ -1,19 +1,19 @@
 package com.example.nbupiggybank;
 
-import com.google.firebase.firestore.DocumentReference;
 
 public class User {
 
-    public String name, email, iban, card, cardExpiryDate;
+    public String name, email, iban, card, cardExpiryDate, phone;
     public Double cardAmount;
 
-    public User(String name, String email, String iban, String card, String cardExpiryDate, Double cardAmount){
+    public User(String name, String email, String iban, String card, String cardExpiryDate, Double cardAmount, String phone){
         this.name = name;
         this.email = email;
         this.iban = iban;
         this.card = card;
         this.cardExpiryDate = cardExpiryDate;
         this.cardAmount = cardAmount;
+        this.phone = phone;
     }
 
     public String getName() {
