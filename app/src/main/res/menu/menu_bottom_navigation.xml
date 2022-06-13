@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:panelFullBackground="@android:color/white">
+    <item
+        android:id="@+id/action_home"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_house_siding_24"
+        android:title="@string/menuBegin"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_profile"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_account_circle_24"
+        android:title="@string/menuProfile"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_transfer"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_compare_arrows_24"
+        android:title="@string/menuTransactions"
+        app:showAsAction="ifRoom" />
+</menu>
