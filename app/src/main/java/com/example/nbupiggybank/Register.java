@@ -196,32 +196,33 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                 });
 
     }
+
     // При регистриране на потребител се взима 1 от 3-те акаунта
-    private void getIbanAndCard(HashMap<String, String> accountInfo){
-       Random random = new Random();
-       List<String> keys = new ArrayList<>(accountInfo.keySet());
-       iban = keys.get(random.nextInt(keys.size()));
-       card = accountInfo.get(iban);
+    private void getIbanAndCard(HashMap<String, String> accountInfo) {
+        Random random = new Random();
+        List<String> keys = new ArrayList<>(accountInfo.keySet());
+        iban = keys.get(random.nextInt(keys.size()));
+        card = accountInfo.get(iban);
     }
 
 
     // Понеже приложението е демо, за сега има само 3 акаунта с по 1 карта вътре. Данните не са инстински
-    private void createAccountInfo(HashMap<String, String> accountInfo){
-        accountInfo.put("BG09PBBB94007754115719","4062 **** **** 3156");
-        accountInfo.put("BG22PBBB91551177529236","4894 **** **** 1499");
-        accountInfo.put("BG95PBBB94006116647374","4893 **** **** 8705");
+    private void createAccountInfo(HashMap<String, String> accountInfo) {
+        accountInfo.put("BG09PBBB94007754115719", "4062 **** **** 3156");
+        accountInfo.put("BG22PBBB91551177529236", "4894 **** **** 1499");
+        accountInfo.put("BG95PBBB94006116647374", "4893 **** **** 8705");
     }
 
-    private void getExpiryDateAndAmount(HashMap<String, Double> cardInfo){
+    private void getExpiryDateAndAmount(HashMap<String, Double> cardInfo) {
         Random random = new Random();
         List<String> keys = new ArrayList<>(cardInfo.keySet());
         cardExpiryDate = keys.get(random.nextInt(keys.size()));
         cardAmount = cardInfo.get(cardExpiryDate);
     }
 
-    private void createCardInfo(HashMap<String, Double> cardInfo){
-        cardInfo.put("05/23", 456.78);
-        cardInfo.put("09/24", 532.25);
-        cardInfo.put("01/26", 498.55);
+    private void createCardInfo(HashMap<String, Double> cardInfo) {
+        cardInfo.put("05/27", 600.00);
+        cardInfo.put("09/27", 600.00);
+        cardInfo.put("01/27", 600.00);
     }
 }

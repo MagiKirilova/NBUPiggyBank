@@ -21,7 +21,7 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionViewHold
     private final String currency = "BGN";
     private String outputAmountString, inputAmountString;
 
-    public TransactionAdapter(Context transactionContext, List<TransactionData> transactionData){
+    public TransactionAdapter(Context transactionContext, List<TransactionData> transactionData) {
         this.transactionContext = transactionContext;
         this.transactionData = transactionData;
     }
@@ -40,15 +40,15 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionViewHold
     @NonNull
     @Override
     public TransactionViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-       View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclerview_transactions_item,
-               parent,false);
-       return new TransactionViewHolder(view);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclerview_transactions_item,
+                parent, false);
+        return new TransactionViewHolder(view);
     }
 
 
     @Override
     public void onBindViewHolder(@NonNull TransactionViewHolder holder, int position) {
-        outputAmountString =  "- " + String.valueOf(transactionData.get(position).getOutputAmount());
+        outputAmountString = "- " + String.valueOf(transactionData.get(position).getOutputAmount());
         inputAmountString = String.valueOf(transactionData.get(position).getOutputAmount());
         holder.transactionDate.setText(transactionData.get(position).getDate());
         holder.transactionName.setText(transactionData.get(position).getNameType());

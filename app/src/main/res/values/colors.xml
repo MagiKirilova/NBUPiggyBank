@@ -13,5 +13,6 @@
     <color name="gray_01">#796e6e</color>
     <color name="black_02">#171817</color>
     <color name="deepPink">#FF0A54</color>
+    <color name="deepPurple">#6c0f8f</color>
     <color name="splash_background_color">#FAFAFA</color>
 </resources>

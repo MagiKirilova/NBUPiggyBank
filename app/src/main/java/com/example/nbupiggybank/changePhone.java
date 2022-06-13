@@ -34,7 +34,7 @@ public class changePhone extends AppCompatActivity {
         setContentView(R.layout.activity_change_phone);
 
         TextInputLayout newPhoneNumberInput = findViewById(R.id.newPhoneNumber);
-        TextInputLayout newPhoneCodeInput= findViewById(R.id.newPhoneCode);
+        TextInputLayout newPhoneCodeInput = findViewById(R.id.newPhoneCode);
         Button sendCodeButton = findViewById(R.id.sendCodeForNewPhoneNumber);
         Button changePhoneButton = findViewById(R.id.changePhone);
 

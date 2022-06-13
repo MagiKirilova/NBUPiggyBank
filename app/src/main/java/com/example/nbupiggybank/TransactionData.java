@@ -7,7 +7,7 @@ public class TransactionData {
     private final String date;
     private final String nameType;
 
-    public TransactionData(String nameType, String date, String outputAmount, String inputAmount){
+    public TransactionData(String nameType, String date, String outputAmount, String inputAmount) {
         this.date = date;
         this.nameType = nameType;
         this.outputAmount = outputAmount;

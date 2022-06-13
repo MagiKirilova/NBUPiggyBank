@@ -70,22 +70,22 @@ public class emailPasswordLogin extends AppCompatActivity {
             if (TextUtils.isEmpty(email)) {
                 Toast.makeText(emailPasswordLogin.this, "Моля въведете правилен имейл!", Toast.LENGTH_SHORT).show();
             } else {
-                emailAndPassAuth(email,password);
+                emailAndPassAuth(email, password);
             }
         });
     }
 
-        public void emailAndPassAuth(String email, String password){
-            mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, task -> {
-                if (task.isSuccessful()) {
-                    Intent i;
-                    i = new Intent(emailPasswordLogin.this, changePhone.class);
-                    startActivity(i);
-                    finish();
-                } else {
-                    Toast.makeText(emailPasswordLogin.this, "Authentication failed.",
-                            Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
+    public void emailAndPassAuth(String email, String password) {
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, task -> {
+            if (task.isSuccessful()) {
+                Intent i;
+                i = new Intent(emailPasswordLogin.this, changePhone.class);
+                startActivity(i);
+                finish();
+            } else {
+                Toast.makeText(emailPasswordLogin.this, "Authentication failed.",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 }

@@ -46,7 +46,6 @@ public class ProfileStartActivity extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
 
 
-
     }
 
     HomeFragment homeFragment = new HomeFragment();
@@ -56,7 +55,7 @@ public class ProfileStartActivity extends AppCompatActivity {
     @SuppressLint("NonConstantResourceId")
     private final BottomNavigationView.OnNavigationItemSelectedListener navListener =
             item -> {
-                switch (item.getItemId()){
+                switch (item.getItemId()) {
                     case R.id.action_home:
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, homeFragment).commit();
                         return true;
@@ -71,8 +70,6 @@ public class ProfileStartActivity extends AppCompatActivity {
                 }
                 return false;
             };
-
-
 
 
 }

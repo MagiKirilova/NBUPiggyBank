@@ -93,7 +93,7 @@ public class ProfileFragment extends Fragment {
         // Търсене на неговото име
         DocumentReference documentReferenceUser = database.collection("Users").document(userId);
         documentReferenceUser.addSnapshotListener((value, error) -> {
-            if(value != null && value.exists()) {
+            if (value != null && value.exists()) {
                 outputCustomerName.setText(Objects.requireNonNull(Objects.requireNonNull(value.getData()).get("name")).toString());
                 outputCustomerEmail.setText(Objects.requireNonNull(email));
                 outputCustomerIBAN.setText(Objects.requireNonNull(Objects.requireNonNull(value.getData()).get("iban")).toString());

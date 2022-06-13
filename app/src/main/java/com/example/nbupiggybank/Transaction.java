@@ -2,7 +2,6 @@ package com.example.nbupiggybank;
 
 import com.google.firebase.Timestamp;
 
-import java.sql.Time;
 
 public class Transaction {
     public String date, inputAmount, nameType, outputAmount;

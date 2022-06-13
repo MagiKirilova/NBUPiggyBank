@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/ScrollView04"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:fillViewport="true"
-    android:background="@color/white">
+    android:background="@color/white"
+    android:fillViewport="true">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -28,35 +28,32 @@
             android:id="@+id/loginAuthBanner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/piggyAuthIcon"
             android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/login_register_margin_bottom"
             android:fontFamily="sans-serif-black"
             android:text="@string/newPhoneNumber"
             android:textAlignment="center"
             android:textColor="@color/black_02"
             android:textSize="@dimen/login_register_text_size"
-            android:textStyle="normal"
-            android:layout_below="@id/piggyAuthIcon"
-            android:layout_marginBottom="@dimen/login_register_margin_bottom"
-            />
+            android:textStyle="normal" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/newPhoneNumber"
+            style="@style/TextInputLayoutStyle"
             android:layout_width="match_parent"
-            android:layout_below="@id/loginAuthBanner"
             android:layout_height="wrap_content"
+            android:layout_below="@id/loginAuthBanner"
             android:hint="@string/phonelabel"
             android:textColorHint="@color/black_02"
             android:textSize="@dimen/edit_text_size"
-            app:startIconTint="@null"
-            style="@style/TextInputLayoutStyle"
-            >
+            app:startIconTint="@null">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black_02"
                 android:inputType="phone"
-                />
+                android:textColor="@color/black_02" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
@@ -70,27 +67,24 @@
             android:minHeight="@dimen/edit_text_min_height"
             android:text="@string/sendphonecode"
             android:textColor="@color/white"
-            android:textSize="@dimen/edit_text_size"
-            />
+            android:textSize="@dimen/edit_text_size" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/newPhoneCode"
-            android:layout_width="match_parent"
-            android:layout_below="@id/sendCodeForNewPhoneNumber"
-            android:layout_height="wrap_content"
-            android:hint="@string/enterCode"
-            android:layout_marginTop="@dimen/verify_phone_code_label_top"
-            android:textColorHint="@color/black_02"
-            android:textSize="@dimen/edit_text_size"
             style="@style/TextInputLayoutStyle"
-            >
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sendCodeForNewPhoneNumber"
+            android:layout_marginTop="@dimen/verify_phone_code_label_top"
+            android:hint="@string/enterCode"
+            android:textColorHint="@color/black_02"
+            android:textSize="@dimen/edit_text_size">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black_02"
                 android:inputType="number"
-                />
+                android:textColor="@color/black_02" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
@@ -104,8 +98,7 @@
             android:minHeight="@dimen/edit_text_min_height"
             android:text="@string/forward"
             android:textColor="@color/white"
-            android:textSize="@dimen/edit_text_size"
-           />
+            android:textSize="@dimen/edit_text_size" />
 
     </RelativeLayout>
 </ScrollView>

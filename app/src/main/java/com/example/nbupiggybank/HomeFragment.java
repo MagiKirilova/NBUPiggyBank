@@ -83,7 +83,7 @@ public class HomeFragment extends Fragment {
         outputCustomerName = view.findViewById(R.id.homeCustomerName);
         outputCardAmount = view.findViewById(R.id.homeCardAmount);
         recyclerView = view.findViewById(R.id.recyclerViewTransactions);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false );
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
 
         transactionDataList.clear();
@@ -92,7 +92,7 @@ public class HomeFragment extends Fragment {
         // Търсене на неговото име
         DocumentReference documentReferenceUser = database.collection("Users").document(userId);
         documentReferenceUser.addSnapshotListener((value, error) -> {
-            if(value != null && value.exists()) {
+            if (value != null && value.exists()) {
                 outputCustomerName.setText(Objects.requireNonNull(Objects.requireNonNull(value.getData()).get("name")).toString());
                 outputCardAmount.setText(Objects.requireNonNull(Objects.requireNonNull(value.getData()).get("cardAmount")).toString());
             }
@@ -105,9 +105,9 @@ public class HomeFragment extends Fragment {
         return view;
     }
 
-    private void getTransactions(String userId){
+    private void getTransactions(String userId) {
         database.collection("Users").document(userId).collection("transactions").orderBy("timestamp", Query.Direction.DESCENDING).get().addOnCompleteListener(task -> {
-            if(task.isSuccessful()){
+            if (task.isSuccessful()) {
                 for (QueryDocumentSnapshot document : task.getResult()) {
                     Log.d(TAG, document.getId() + " here => " + document.getData());
                     String nameType = document.getString("nameType");
@@ -118,7 +118,7 @@ public class HomeFragment extends Fragment {
                     TransactionData transactionData = new TransactionData(nameType, date, outputAmount, inputAmount);
                     transactionDataList.add(transactionData);
                 }
-                TransactionAdapter transactionAdapter = new TransactionAdapter(getContext(),transactionDataList);
+                TransactionAdapter transactionAdapter = new TransactionAdapter(getContext(), transactionDataList);
                 recyclerView.setAdapter(transactionAdapter);
                 Log.d(TAG, "Number of items in adapter: " + transactionAdapter.getItemCount());
             } else {

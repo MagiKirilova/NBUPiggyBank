@@ -47,9 +47,9 @@ public class TransferFragment extends Fragment {
     public View view;
 
     private TextView outputCurrentAmount, outputAccount;
-    private TextInputLayout inputRecipientName, inputAmountToSend;
+    private TextInputLayout inputRecipientName, inputAmountToSend, inputIBAN;
     private Button button;
-    private String recipientName, amountToSend;
+    private String recipientName, amountToSend, recipientIBAN;
     private final FirebaseFirestore database = FirebaseFirestore.getInstance();
 
     //Rename and change types of parameters
@@ -88,7 +88,6 @@ public class TransferFragment extends Fragment {
     }
 
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -99,6 +98,7 @@ public class TransferFragment extends Fragment {
 
         inputRecipientName = view.findViewById(R.id.recipientName);
         inputAmountToSend = view.findViewById(R.id.amountToSend);
+        inputIBAN = view.findViewById(R.id.recipientIban);
 
         button = view.findViewById(R.id.buttonMakeTransferDemo);
 
@@ -142,12 +142,27 @@ public class TransferFragment extends Fragment {
             }
         });
 
+        Objects.requireNonNull(inputIBAN.getEditText()).addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                recipientIBAN = charSequence.toString();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
 
 
         // Търсене на неговото име
         DocumentReference documentReferenceUser = database.collection("Users").document(userId);
         documentReferenceUser.addSnapshotListener((value, error) -> {
-            if(value != null && value.exists()) {
+            if (value != null && value.exists()) {
                 outputAccount.setText(Objects.requireNonNull(Objects.requireNonNull(value.getData()).get("iban")).toString());
                 outputCurrentAmount.setText(Objects.requireNonNull(Objects.requireNonNull(value.getData()).get("cardAmount")).toString());
             }
@@ -155,6 +170,42 @@ public class TransferFragment extends Fragment {
         });
 
         button.setOnClickListener(v -> {
+
+            if (amountToSend.isEmpty()) {
+                inputAmountToSend.setError("Моля въведете сума за изпращане!");
+                inputAmountToSend.requestFocus();
+                return;
+            }
+
+            if (Double.parseDouble(amountToSend) < 0.50) {
+                inputAmountToSend.setError("Моля въведете сума за изпращане!");
+                inputAmountToSend.requestFocus();
+                return;
+            }
+
+            if (recipientName.isEmpty()) {
+                inputRecipientName.setError("Моля въведете вашето име!");
+                inputRecipientName.requestFocus();
+                return;
+            }
+
+            if (recipientName.length() < 2) {
+                inputRecipientName.setError("Моля въведете вашето име!");
+                inputRecipientName.requestFocus();
+                return;
+            }
+
+            if (recipientIBAN.isEmpty()) {
+                inputIBAN.setError("Моля въведете вашият IBAN!");
+                inputIBAN.requestFocus();
+                return;
+            }
+
+            if (recipientIBAN.length() < 22) {
+                inputIBAN.setError("Моля въведете 22 символния си IBAN!");
+                inputIBAN.requestFocus();
+                return;
+            }
 
             Timestamp timestamp = Timestamp.now();
 
@@ -166,8 +217,8 @@ public class TransferFragment extends Fragment {
 
             // Търсене на разполагаемата сума и след това изваждане на сумата за превод и прехвърляна на новата сума в базата
             DocumentReference documentReferenceTransfer = database.collection("Users").document(userId);
-           documentReferenceTransfer.get().addOnCompleteListener(task -> {
-                if(task.isSuccessful()){
+            documentReferenceTransfer.get().addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
                     DocumentSnapshot documentSnapshot = task.getResult();
                     Double cardAmount = Double.valueOf(documentSnapshot.getLong("cardAmount"));
                     Double updateAmount = cardAmount - Double.parseDouble(amountToSend);
@@ -175,10 +226,11 @@ public class TransferFragment extends Fragment {
                 } else {
                     Log.d(TAG, "Error getting documents: ", task.getException());
                 }
-           });
+            });
 
-           // database.collection("Users").document(userId).update("cardAmount");
-            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, HomeFragment.class , null).commit();
+
+            // database.collection("Users").document(userId).update("cardAmount");
+            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, HomeFragment.class, null).commit();
 
             Toast.makeText(getContext(), "Успешна транзакция!",
                     Toast.LENGTH_SHORT).show();
