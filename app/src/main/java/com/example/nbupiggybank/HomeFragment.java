@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -18,6 +19,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -41,6 +43,7 @@ public class HomeFragment extends Fragment {
     private final FirebaseFirestore database = FirebaseFirestore.getInstance();
     private RecyclerView recyclerView;
     private final List<TransactionData> transactionDataList = new ArrayList<>();
+    private DecimalFormat decimalFormat = new DecimalFormat("0.00");
 
     public HomeFragment() {
         // Required empty public constructor
@@ -94,12 +97,18 @@ public class HomeFragment extends Fragment {
         documentReferenceUser.addSnapshotListener((value, error) -> {
             if (value != null && value.exists()) {
                 outputCustomerName.setText(Objects.requireNonNull(Objects.requireNonNull(value.getData()).get("name")).toString());
-                outputCardAmount.setText(Objects.requireNonNull(Objects.requireNonNull(value.getData()).get("cardAmount")).toString());
+                String amountInAccount = value.getData().get("cardAmount").toString();
+                Double doubleInputAmount = Double.valueOf(amountInAccount);
+                amountInAccount = (decimalFormat.format(doubleInputAmount));
+                outputCardAmount.setText(amountInAccount);
             }
 
         });
 
+
+
         getTransactions(userId);
+
 
 
         return view;

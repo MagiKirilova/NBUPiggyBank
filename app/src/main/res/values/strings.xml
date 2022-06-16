@@ -64,7 +64,6 @@
     <string name="menuBegin">Начало</string>
     <string name="menuProfile">Профил</string>
     <string name="menuTransactions">Преводи</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="myProfile">Моят профил</string>
     <string name="cardBanner">Карта</string>
@@ -76,4 +75,12 @@
     <string name="recipient">Получател</string>
     <string name="recipientIban">IBAN на получател</string>
     <string name="sendMoney">Преведи</string>
+    <string name="addToAmount">Добави към сметка</string>
+    <string name="sendTo">Изпрати до</string>
+    <string name="addToMyAmount">към моята сметка</string>
+
+    <string-array name="spinnerTransaction">
+        <item>Моята сметка</item>
+        <item>Чужда сметка</item>
+    </string-array>
 </resources>

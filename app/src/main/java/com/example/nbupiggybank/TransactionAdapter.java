@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -20,6 +21,7 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionViewHold
     private final Context transactionContext;
     private final String currency = "BGN";
     private String outputAmountString, inputAmountString;
+
 
     public TransactionAdapter(Context transactionContext, List<TransactionData> transactionData) {
         this.transactionContext = transactionContext;
@@ -48,12 +50,29 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionViewHold
 
     @Override
     public void onBindViewHolder(@NonNull TransactionViewHolder holder, int position) {
-        outputAmountString = "- " + String.valueOf(transactionData.get(position).getOutputAmount());
-        inputAmountString = String.valueOf(transactionData.get(position).getOutputAmount());
+        // proverka za input/output i promqna na cvqt \ ili s gone i visible
+        outputAmountString =String.valueOf(transactionData.get(position).getOutputAmount());
+        inputAmountString =String.valueOf(transactionData.get(position).getInputAmount());
+
+        if (inputAmountString.isEmpty()) inputAmountString ="0.0";
+        if (outputAmountString.isEmpty()) outputAmountString ="0.0";
+
+
+        if(outputAmountString.equals("0.0")){
+            holder.transactionInputAmount.setVisibility(View.VISIBLE);
+            holder.transactionOutputAmount.setVisibility(View.GONE);
+            String inputPlus = "+" + inputAmountString;
+            holder.transactionInputAmount.setText(inputPlus);
+
+        } else {
+            holder.transactionOutputAmount.setVisibility(View.VISIBLE);
+            holder.transactionInputAmount.setVisibility(View.GONE);
+            String outputMinus = "-" + outputAmountString;
+            holder.transactionOutputAmount.setText(outputMinus);
+        }
+
         holder.transactionDate.setText(transactionData.get(position).getDate());
         holder.transactionName.setText(transactionData.get(position).getNameType());
-        holder.transactionOutputAmount.setText(outputAmountString);
-        holder.transactionInputAmount.setText(inputAmountString);
         holder.transactionBgn.setText(currency);
 
 
@@ -85,6 +104,8 @@ class TransactionViewHolder extends RecyclerView.ViewHolder {
         transactionName = itemView.findViewById(R.id.transactionName);
         transactionOutputAmount = itemView.findViewById(R.id.amountOutput);
         transactionInputAmount = itemView.findViewById(R.id.amountInput);
+        transactionInputAmount.setVisibility(View.GONE);
+        transactionOutputAmount.setVisibility(View.GONE);
         transactionBgn = itemView.findViewById(R.id.transactionBGN);
         transactionLayout = itemView.findViewById(R.id.layoutTransactionLayout);
     }
