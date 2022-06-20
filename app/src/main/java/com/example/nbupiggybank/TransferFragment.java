@@ -295,7 +295,8 @@ public class TransferFragment extends Fragment {
                     }
                 });
             } else {
-                Transaction transaction = new Transaction(timestamp, dateThis, "0.0", recipientName, amountToSend);
+                Transaction transaction2 = new Transaction(timestamp, dateThis, "0.0", recipientName, amountToSend);
+                database.collection("Users").document(userId).collection("transactions").document().set(transaction2);
 
                 // Търсене на разполагаемата сума и след това изваждане на сумата за превод и прехвърляна на новата сума в базата
                 DocumentReference documentReferenceTransferOutput = database.collection("Users").document(userId);
