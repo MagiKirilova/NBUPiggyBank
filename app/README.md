@@ -17,4 +17,4 @@ Project is created for NBU Course CITB635 with the help and assistance provided 
 * Demo account creation with its own IBAN & card number, which are not real and used for demo purposes only
 * Home page - with recent transaction history and showing the available amount of money in the account
 * Profile page - has all the profile & card details
-* Transaction page - Users can make a demo transaction, either to their account or someelse's
+* Transaction page - Users can make a demo transaction, either to their account or someone else's
