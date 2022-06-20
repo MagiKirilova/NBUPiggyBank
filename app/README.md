@@ -1,7 +1,5 @@
 # NBU Piggy Bank
 
-![PiggyBankLogo](https://prnt.sc/PHN1zp89DwD_)
-
 NBU Piggy Bank is a mobile Android bank application with the intention of being used by children.
 Project is created for NBU Course CITB635 with the help and assistance provided by Dr. Dimitar Petrov!
 
